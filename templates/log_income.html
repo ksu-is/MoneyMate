@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log Income</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Log Income</h2>
-    <form method="post">
-        <label>Amount: $</label>
-        <input type="number" step="0.01" name="amount" required><br>
-        <label>Description:</label>
-        <input type="text" name="description"><br>
-        <button type="submit">Submit</button>
-    </form>
-    <a href="{{ url_for('index') }}">Back to Home</a>
+    <div class="container">
+        <h2>Log Your Income: All Sources</h2>
+        <form method="post">
+            <label for="amount">Income Amount ($):</label>
+            <input type="number" id="amount" name="amount" step="0.01" required>
+            
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required>
+            
+            <button type="submit">Submit Income</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="back-link">Back to Home</a>
+    </div>
 </body>
 </html>

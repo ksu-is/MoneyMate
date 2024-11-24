@@ -109,9 +109,16 @@ def summary():
         category = expense["category"]
         category_expenses[category] = category_expenses.get(category, 0) + expense["amount"]
 
-    return render_template('summary.html', total_income=total_income, total_expenses=total_expenses,
-                           category_expenses=category_expenses, budgets=data["budgets"],
-                           savings_goals=data["savings_goals"])
+    categories = list(category_expenses.keys())
+    expenses = list(category_expenses.values())
+
+    return render_template(
+        'summary.html',
+        total_income=total_income,
+        total_expenses=total_expenses,
+        categories=categories,
+        expenses=expenses,
+    )
 
 @app.errorhandler(404)
 def page_not_found(e):

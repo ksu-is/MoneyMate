@@ -16,10 +16,10 @@
     <script>
         const ctx = document.getElementById('expenseChart').getContext('2d');
         const chartData = {
-            labels: {{ category_expenses.keys()|tojson }},
+            labels: {{ categories|tojson }},  // Use categories passed from the route
             datasets: [{
                 label: 'Expenses by Category',
-                data: {{ category_expenses.values()|tojson }},
+                data: {{ expenses|tojson }},  // Use expenses passed from the route
                 backgroundColor: ['#ff69b4', '#ff1493', '#ffe4e1', '#ffb6c1', '#ffc0cb'],
                 borderWidth: 1
             }]
@@ -34,6 +34,10 @@
                 }
             }
         });
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>

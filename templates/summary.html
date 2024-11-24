@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Financial Summary</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
-        <h2>Financial Summary</h2>
+        <h2>Your Financial Summary</h2>
+        <p class="motivation">"Seeing the bigger picture of your finances makes the small steps worth it!"</p>
+        <p><strong>Total Income:</strong> ${{ total_income }}</p>
+        <p><strong>Total Expenses:</strong> ${{ total_expenses }}</p>
         <canvas id="expenseChart" width="400" height="400"></canvas>
         <a href="{{ url_for('index') }}" class="back-link">Back to Home</a>
     </div>
     <script>
         const ctx = document.getElementById('expenseChart').getContext('2d');
         const chartData = {
-            labels: {{ categories|tojson }},  // Use categories passed from the route
+            labels: {{ categories|tojson }},  // Category labels from Flask
             datasets: [{
                 label: 'Expenses by Category',
-                data: {{ expenses|tojson }},  // Use expenses passed from the route
-                backgroundColor: ['#ff69b4', '#ff1493', '#ffe4e1', '#ffb6c1', '#ffc0cb'],
+                data: {{ expenses|tojson }},  // Expense values from Flask
+                backgroundColor: [
+                    '#ff69b4', '#ff1493', '#ffe4e1', '#ffb6c1', '#ffc0cb',
+                    '#d4a5a5', '#f2a3a3', '#e6c8d8', '#fabebe', '#f5ccd4'
+                ],
                 borderWidth: 1
             }]
         };
@@ -34,10 +41,6 @@
                 }
             }
         });
-    </script>
-</body>
-</html>
-
     </script>
 </body>
 </html>

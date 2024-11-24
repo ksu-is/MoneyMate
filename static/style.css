@@ -18,7 +18,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     max-width: 500px;
     width: 90%; 
-    background-color: #ffe4e1; 
+    margin: auto;
 }
 
 
@@ -29,9 +29,20 @@ h1 {
 }
 .slogan {
     font-size: 1.2em;
-    color: #5a4e4e; /* Softer text color */
+    color: #5a4e4e; 
     margin-bottom: 20px;
     font-style: italic;
+}
+
+h2 {
+    color: #ff69b4; 
+    margin-bottom: 10px;
+}
+
+.motivation {
+    font-style: italic; 
+    color: #5a4e4e; 
+    margin-bottom: 20px;
 }
 
 nav ul {

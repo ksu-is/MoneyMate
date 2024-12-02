@@ -18,6 +18,30 @@ MoneyMate is a simple, web-based personal finance tracker that helps users log i
 - **Set Budgets:** Define budgets for spending categories and monitor spending against set limits.
 - **Set Savings Goals:** Set and track progress toward specific financial goals with customs goal names and targets.
 - **View Financial Summary:** Get an overview of total income, total expenses, budget usage, and savings goal progress.
+---
+
+## Screenshots
+
+### **Home Page**
+The home page welcomes users with an inviting message and simple navigation to all major features.
+
+![Home Page](static/images/home_page.png)
+
+---
+
+### **Log Income Page**
+Users can record their income streams with descriptions to track all sources of income effectively.
+
+![Log Income Page](static/images/log_income_page.png)
+
+---
+
+### **Financial Summary**
+The summary page provides an overview of total income, expenses, and savings goals, along with a colorful pie chart to visualize spending by category.
+
+![Financial Summary](static/images/financial_summary.png)
+
+
 ## Project Structure
 
 ```plaintext
